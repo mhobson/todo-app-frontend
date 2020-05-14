@@ -4,8 +4,9 @@ import axios from 'axios'
 import PageHeader from '../template/pageHeader'
 import TodoForm from './todoFrom'
 import TodoList from './todoList'
+import consts from '../consts'
 
-const URL = 'http://localhost:3003/api/todos'
+const URL = process.env.NODE_ENV === 'production' ? consts.API_URL : 'http://localhost:3003/api/todos'
 
 export default class Todo extends Component {
     constructor(props) {
